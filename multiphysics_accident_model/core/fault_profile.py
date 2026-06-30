@@ -260,4 +260,3 @@ def apply_terminal_configuration(sim):
         sim.ac_phase_extinction_band = config['ac_phase_extinction_band']
     else:
         sim.ac_source_phase = 0.0
-

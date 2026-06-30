@@ -178,4 +178,3 @@ def print_diagnostics_report(sim, history_df, labels, diag, title='Diagnostics R
     for category, msg in issues:
         print(f'  [{category}] {msg}')
     return False
-

@@ -23,7 +23,7 @@ from .pigate_labels import (
 )
 
 
-def convert_simulation_to_pigate(sim, history_df, dt_record=0.02):
+def convert_case_to_pigate(sim, history_df, dt_record=0.02):
     """将一次仿真结果转换为 PIGAT 数据包。
 
     返回 dict，包含所有 PIGAT 需要的张量和元数据。
@@ -132,4 +132,3 @@ def load_pigate_data(filepath):
         'door_state': str(raw['door_state']),
         'ambient_temp': float(raw['ambient_temp']),
     }
-

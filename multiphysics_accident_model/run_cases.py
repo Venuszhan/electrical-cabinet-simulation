@@ -3,7 +3,7 @@
     from pathlib import Path
 
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-    from cabinet_fault_simulation.observation.output_writer import run_sweep
+    from multiphysics_accident_model.observation.output_writer import run_sweep
 else:
     from .observation.output_writer import run_sweep
 
@@ -19,7 +19,7 @@ def parse_csv_strings(value):
 if __name__ == '__main__':
     import argparse
 
-    parser = argparse.ArgumentParser(description='Run the cabinet fire digital-twin simulation cases.')
+    parser = argparse.ArgumentParser(description='Run the cabinet fire digital-twin accident cases.')
     parser.add_argument('--output', default='fangzhen_digital_twin_v5.xlsx')
     parser.add_argument('--currents', type=parse_csv_floats, default=None, help='Comma-separated current list, e.g. 0,2,4.')
     parser.add_argument('--fault-terminals', type=parse_csv_strings, default=None, help='Comma-separated fault sites, e.g. KM1_DC,KM1_AC,X1,X2.')
@@ -39,4 +39,3 @@ if __name__ == '__main__':
         vent_state=args.vent,
     )
     print(f'\n>>> 仿真完成，结果已写入 {args.output}。')
-

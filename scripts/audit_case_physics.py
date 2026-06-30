@@ -1,6 +1,6 @@
-﻿"""Screen the 1920-case simulation result set for physical plausibility.
+﻿"""Screen the 1920-case accident-case result set for physical plausibility.
 
-This audit does not alter simulation outputs.  It combines the case summary
+This audit does not alter case outputs.  It combines the case summary
 with stored per-case diagnostics and inspects one worst-case history trace to
 make the main propagation concern reproducible.
 """
@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 
-ROOT = Path(__file__).resolve().parents[1] / "outputs" / "simulation_1920"
+ROOT = Path(__file__).resolve().parents[1] / "outputs" / "accident_cases_1920"
 OUTPUT_CSV = ROOT / "physics_audit_cases.csv"
 OUTPUT_REPORT = ROOT / "PHYSICS_AUDIT_REPORT.md"
 REQUIRED_FILES = (
@@ -266,4 +266,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

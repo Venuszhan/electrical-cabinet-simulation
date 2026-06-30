@@ -59,4 +59,3 @@ def update_fault_contact(sim, local_temp, contact_power):
     runaway = 1.0 + 0.08 * electrical_drive
     contact_resistance = sim.R_metal + sim.R_loose + sim.R_oxide + sim.R_carbon
     sim.states[sim.f_node][2] = min(contact_resistance * runaway, sim.R_contact_ceiling)
-

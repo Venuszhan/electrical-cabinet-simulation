@@ -31,4 +31,3 @@
         '模型能力标签': diag['Capability_Tag'],
         '主要局限': diag['Limitation_Tag'],
     }
-

@@ -1,4 +1,4 @@
-Dual License
+﻿Dual License
 ============
 
 This repository contains both software and research data.
@@ -6,7 +6,7 @@ This repository contains both software and research data.
 Software License
 ----------------
 
-All source code in this repository, including files under `cabinet_fault_simulation/`
+All source code in this repository, including files under `multiphysics_accident_model/`
 and `scripts/`, is licensed under the MIT License.
 
 MIT License

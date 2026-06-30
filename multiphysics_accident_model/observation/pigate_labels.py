@@ -281,4 +281,3 @@ def build_graph_static_tensors(sim):
         'node_id': node_id,
         'nodes': sim.nodes,
     }
-

@@ -104,4 +104,3 @@ def required_ignition_energy(sim, arc_current, arc_power):
     if sim.arc_model.supply_mode == 'DC':
         required_energy *= 0.88
     return required_energy * (1.0 - 0.10 * sim.gamma)
-

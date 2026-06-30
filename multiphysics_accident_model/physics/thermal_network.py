@@ -113,4 +113,3 @@ def compute_thermal_step(sim, inst_cache):
         pyro_rates[n] = compute_pyrolysis_rate(sim, n, p_elec[n])
 
     return next_T, pyro_rates, p_fire
-

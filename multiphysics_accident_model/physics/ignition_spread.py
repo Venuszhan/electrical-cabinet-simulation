@@ -536,4 +536,3 @@ def build_diagnostics(sim, t_stage1_5, t_stage2, t_stage3, history_df=None):
                 result[f'{col}_Max'] = round(float(history_df[col].max()), 5)
 
     return result
-

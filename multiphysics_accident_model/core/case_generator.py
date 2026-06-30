@@ -223,4 +223,3 @@ if __name__ == '__main__':
     df = generate_case_table(save_path=str(CONFIG_DIR / 'generated_cases.csv'))
     print(f'Generated {len(df)} cases.')
     print(df.head())
-

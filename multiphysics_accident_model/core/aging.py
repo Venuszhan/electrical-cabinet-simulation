@@ -135,4 +135,3 @@ def apply_fault_aging_effects(sim):
     sim.gas_spread_threshold *= profile.gas_threshold_multiplier
     sim.arc_energy_zone_low *= profile.arc_energy_multiplier
     sim.arc_energy_zone_high *= profile.arc_energy_multiplier
-

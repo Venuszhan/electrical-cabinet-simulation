@@ -61,4 +61,3 @@ CABINET_ZONES = load_zone_table()
 def get_dist(sim, n1, n2):
     p1, p2 = sim.node_pos[n1], sim.node_pos[n2]
     return sum((a - b) ** 2 for a, b in zip(p1, p2)) ** 0.5
-

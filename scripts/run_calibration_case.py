@@ -6,7 +6,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-from cabinet_fault_simulation.core.state import PIGAT_Realistic_DigitalTwin_V3
+from multiphysics_accident_model.core.state import PIGAT_Realistic_DigitalTwin_V3
 
 # Calibration case parameters
 fault_terminal = 'KM1_DC'
@@ -83,7 +83,7 @@ print(f"stage15_arc_carb_gain : {sim.stage15_arc_carb_gain}")
 print(f"stage2_carb_threshold : {sim.stage2_carb_threshold}")
 print(f"stage15_to_stage2_arc_energy : {sim.stage15_to_stage2_arc_energy}")
 print(f"\n{'='*70}")
-print("Running simulation...")
+print("Running case model...")
 print(f"{'='*70}\n")
 
 df, t1_5, t2, t3, q_at_ig, diag = sim.run()
@@ -204,4 +204,3 @@ if not df.empty:
                 print(f"    {col:30s}: {row[col]}")
         else:
             print(f"\n  t = {t_target}s: no data (sim ended earlier)")
-

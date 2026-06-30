@@ -1028,4 +1028,3 @@ class PIGAT_Realistic_DigitalTwin_V3:
         diagnostics = self._build_diagnostics(t_stage1_5, t_stage2, t_stage3, history_df)
         self.last_diagnostics = diagnostics
         return history_df, t_stage1_5, t_stage2, t_stage3, self.Q_at_ig, diagnostics
-

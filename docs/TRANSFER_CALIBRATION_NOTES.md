@@ -1,6 +1,6 @@
 ﻿# Transfer Calibration Notes
 
-This document describes how external experimental or literature evidence can be used to constrain the cabinet fault simulation model. It is written as a general release note for public reuse rather than as a machine-specific project log.
+This document describes how external experimental or literature evidence can be used to constrain the multi-physics accident model. It is written as a general release note for public reuse rather than as a machine-specific project log.
 
 ## Scope
 
@@ -8,10 +8,10 @@ External source-domain evidence may be used to constrain qualitative trends, par
 
 For this dataset, the public package provides:
 
-- simulation code and configuration tables;
-- complete 1920-case simulation definitions;
+- modeling code and configuration tables;
+- complete 1920-case definitions;
 - case-level summary tables;
-- representative raw simulation examples;
+- representative accident-case examples;
 - documentation of the transfer-calibration assumptions.
 
 The complete source-domain experimental dataset is not included in this compact GitHub package.
@@ -29,7 +29,7 @@ When using external thermal-aging, cable-burning, or insulation-reliability evid
 
 Use wording such as:
 
-> The simulation model was calibrated with transfer constraints derived from external experimental and literature evidence. Representative source-domain examples or metadata are provided where release is permitted; the complete source-domain dataset is not included in this compact public package.
+> The accident-evolution model was calibrated with transfer constraints derived from external experimental and literature evidence. Representative source-domain examples or metadata are provided where release is permitted; the complete source-domain dataset is not included in this compact public package.
 
 ## Reuse Notes
 
@@ -40,4 +40,3 @@ Users adapting this repository should document:
 - preprocessing steps;
 - calibration targets and parameters;
 - limitations of transferring evidence across test conditions.
-

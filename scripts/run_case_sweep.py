@@ -1,9 +1,9 @@
-﻿"""Run the 1920-case cabinet fault simulation sweep.
+﻿"""Run the 1920-case multi-physics accident sweep.
 
-Parameter space, defined in ``cabinet_fault_simulation/core/case_generator.py``:
+Parameter space, defined in ``multiphysics_accident_model/core/case_generator.py``:
     4 fault sites x 8 current levels x 5 service ages x 4 vents x 3 seeds = 1920.
 Fixed controls: door_state=closed, ambient_temp=26.0, current_profile=constant.
-Outputs are written to ``outputs/simulation_1920/<CASE_ID>/`` by default.
+Outputs are written to ``outputs/accident_cases_1920/<CASE_ID>/`` by default.
 The runner can resume because cases with an existing ``diagnostics.json`` are skipped.
 """
 from __future__ import annotations
@@ -25,7 +25,7 @@ import pandas as pd
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
-OUTPUT_DIR = REPO_ROOT / "outputs" / "simulation_1920"
+OUTPUT_DIR = REPO_ROOT / "outputs" / "accident_cases_1920"
 CASES_CSV = OUTPUT_DIR / "cases.csv"
 SUMMARY_CSV = OUTPUT_DIR / "summary.csv"
 LOG_FILE = OUTPUT_DIR / "run.log"
@@ -48,7 +48,7 @@ def make_jsonable(value):
 
 
 def generate_cases(save_path: Path) -> pd.DataFrame:
-    from cabinet_fault_simulation.core.case_generator import generate_case_table
+    from multiphysics_accident_model.core.case_generator import generate_case_table
 
     df = generate_case_table()
     df = df.rename(columns={"random_seed": "seed"})
@@ -207,9 +207,9 @@ def assert_effective_config(sim, case: dict):
 
 
 def run_case(case: dict, case_dir: Path) -> dict:
-    from cabinet_fault_simulation.core.state import PIGAT_Realistic_DigitalTwin_V3
-    from cabinet_fault_simulation.observation.pigate_adapter import (
-        convert_simulation_to_pigate,
+    from multiphysics_accident_model.core.state import PIGAT_Realistic_DigitalTwin_V3
+    from multiphysics_accident_model.observation.pigate_adapter import (
+        convert_case_to_pigate,
         save_pigate_data,
     )
 
@@ -230,7 +230,7 @@ def run_case(case: dict, case_dir: Path) -> dict:
     history_df_raw, t1_5, t2, t3, q_at_ig, diag = sim.run()
     diag = make_jsonable(diag)
     history_df = sanitize_history(history_df_raw, sim)
-    pigat_data = convert_simulation_to_pigate(sim, history_df, dt_record=sim.dt_record)
+    pigat_data = convert_case_to_pigate(sim, history_df, dt_record=sim.dt_record)
     save_pigate_data(pigat_data, str(case_dir / "pigat_data.npz"))
 
     # 直接写宽表，不做 long-format split（避免 pd.concat 内存翻倍）
@@ -431,4 +431,3 @@ def main():
 if __name__ == "__main__":
     mp.freeze_support()
     main()
-

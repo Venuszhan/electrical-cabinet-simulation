@@ -135,4 +135,3 @@ def update_gas_smoke_step(sim, next_t, pyro_rates, gas_source_rates, char_rates)
         # 10. gas exposure accumulation
         c_drive = max(0.0, sim.states[node][1] - getattr(sim, 'gas_exposure_base', 0.2))
         sim.gas_exposure[node] += c_drive * sim.dt_record
-

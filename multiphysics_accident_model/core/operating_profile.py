@@ -84,4 +84,3 @@ def apply_operating_case(sim):
 def equivalent_load_resistance(sim, curr_t):
     profile_current = sim.current_profile.value(curr_t)
     return sim.source_voltage_nominal / max(profile_current, 0.1) + sim.upstream_path_resistance, profile_current
-

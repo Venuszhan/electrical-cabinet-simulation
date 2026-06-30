@@ -1,6 +1,6 @@
 ﻿# Multi-physics system accident dataset
 
-This repository contains a compact public release package for a 1920-case multi-physics system accident dataset. It includes the simulation code, complete case definitions, summary tables, and representative raw simulation examples.
+This repository contains a compact public release package for a 1920-case multi-physics system accident dataset. It includes the modeling code, complete case definitions, summary tables, and representative accident-case examples.
 
 The package is designed for GitHub distribution. It does not include the full raw output tree or large downstream training artifacts.
 
@@ -8,12 +8,12 @@ The package is designed for GitHub distribution. It does not include the full ra
 
 ```text
 .
-├── cabinet_fault_simulation/                         # Simulation package
+├── multiphysics_accident_model/                         # Accident modeling package
 ├── scripts/                           # Reproduction, validation, and audit scripts
 ├── case_definitions/                  # Complete 1920-case definitions
 ├── results_summary/                   # Case-level summary tables
 ├── data_examples/
-│   ├── simulation_examples/           # Representative raw simulation cases
+│   ├── accident_case_examples/           # Representative accident-case records
 │   └── source_domain_examples/        # Placeholder for permitted source-domain examples
 ├── docs/                              # Calibration and transfer notes
 ├── DATA_PACKAGE_MANIFEST.md
@@ -24,9 +24,9 @@ The package is designed for GitHub distribution. It does not include the full ra
 
 `case_definitions/` contains the full 1920-case design table and split manifest.
 
-`results_summary/` contains the case-level simulation summary table.
+`results_summary/` contains the case-level summary table.
 
-`data_examples/simulation_examples/` contains selected raw simulation examples. Each example includes:
+`data_examples/accident_case_examples/` contains selected accident-case examples. Each example includes:
 
 - `case_config.json`
 - `summary.json`
@@ -34,7 +34,7 @@ The package is designed for GitHub distribution. It does not include the full ra
 - `diagnostics.json`
 - `system_timeseries.csv.gz`
 
-These examples are copied from the original simulation outputs.
+These examples are copied from the original case outputs.
 
 ## Data Not Included
 
@@ -68,16 +68,16 @@ Run one calibration-style demonstration case:
 python scripts/run_calibration_case.py
 ```
 
-Run a limited simulation sweep:
+Run a limited case sweep:
 
 ```bash
-python scripts/run_simulation_sweep.py --limit 5
+python scripts/run_case_sweep.py --limit 5
 ```
 
 The default full sweep writes outputs to:
 
 ```text
-outputs/simulation_1920/
+outputs/accident_cases_1920/
 ```
 
 ## Inspect Included Examples
@@ -87,7 +87,7 @@ Example time-series data are gzip-compressed CSV files. In Python:
 ```python
 import pandas as pd
 
-df = pd.read_csv("data_examples/simulation_examples/CASE_00001/system_timeseries.csv.gz")
+df = pd.read_csv("data_examples/accident_case_examples/CASE_00001/system_timeseries.csv.gz")
 print(df.head())
 ```
 
@@ -105,4 +105,3 @@ If you use this dataset or code, cite the associated paper or dataset DOI when a
 ## License
 
 Code is released under the MIT License. Data tables, representative examples, and documentation are released under CC BY 4.0 unless otherwise noted. See `LICENSE` for details.
-

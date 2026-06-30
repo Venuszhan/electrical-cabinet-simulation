@@ -1,20 +1,20 @@
 ﻿# Data Package Manifest
 
-This repository is a compact public release package for a 1920-case electrical cabinet fault simulation dataset. It is designed for GitHub distribution: code, case definitions, summary tables, and small representative examples are included; large raw per-case training artifacts are excluded.
+This repository is a compact public release package for a 1920-case multi-physics system accident dataset. It is designed for GitHub distribution: code, case definitions, summary tables, and small representative examples are included; large raw per-case training artifacts are excluded.
 
 ## Included
 
 | Path | Contents |
 | --- | --- |
-| `cabinet_fault_simulation/` | Simulation package and configuration tables. |
+| `multiphysics_accident_model/` | Accident modeling package and configuration tables. |
 | `scripts/` | Reproducibility, calibration-demo, validation, and audit scripts. |
 | `case_definitions/` | Complete 1920-case definitions and split manifest. |
-| `results_summary/` | Case-level simulation summary table. |
-| `data_examples/simulation_examples/` | Small raw simulation examples copied from the original per-case outputs. |
+| `results_summary/` | Case-level summary table. |
+| `data_examples/accident_case_examples/` | Small accident-case examples copied from the original per-case outputs. |
 | `data_examples/source_domain_examples/` | Initial calibration/source-domain time-series record and metadata. |
 | `docs/` | Notes describing how external experimental/literature evidence constrains calibration. |
 
-## Representative Simulation Examples
+## Representative Accident-Case Examples
 
 The example cases use the original per-case `system_timeseries.csv.gz` files.
 
@@ -39,7 +39,7 @@ Each example case contains:
 | `summary.json` | Per-case summary. |
 | `diagnostics.csv` | Tabular diagnostic outputs. |
 | `diagnostics.json` | Diagnostic metadata. |
-| `system_timeseries.csv.gz` | Raw compressed system time series from the original simulation output. |
+| `system_timeseries.csv.gz` | Raw compressed system time series from the original case output. |
 
 Large files such as `pigat_data.npz` and `history.csv.gz` are intentionally not included in this GitHub package.
 
@@ -56,5 +56,3 @@ Large files such as `pigat_data.npz` and `history.csv.gz` are intentionally not 
 ## Source-Domain Calibration Data
 
 The repository includes `data_examples/source_domain_examples/initial_calibration_case_history.csv`, an initial calibration/source-domain time-series record used to demonstrate the transfer-calibration workflow. The duplicated Excel workbook is not included because the CSV contains the same tabular record in a more repository-friendly format.
-
-

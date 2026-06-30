@@ -6,4 +6,3 @@
     f_T = 0.0 if temp < sim.T_pyro else 1.0
     k_chi = 0.15
     return k_chi * pyro_rate * f_T
-

@@ -60,4 +60,3 @@ def apply_sampling_jitter(dt_nominal, jitter_frac=0.05, rng=None):
     else:
         jitter = np.random.uniform(-jitter_frac, jitter_frac)
     return dt_nominal * (1.0 + jitter)
-

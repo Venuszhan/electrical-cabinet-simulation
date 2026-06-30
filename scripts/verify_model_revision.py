@@ -1,9 +1,9 @@
 ﻿"""Lightweight regression checks for the revised cabinet fault physics model."""
 from __future__ import annotations
 
-from cabinet_fault_simulation.core.state import PIGAT_Realistic_DigitalTwin_V3
-from cabinet_fault_simulation.physics.gas_smoke_model import update_gas_smoke_step
-from cabinet_fault_simulation.physics.ignition_spread import (
+from multiphysics_accident_model.core.state import PIGAT_Realistic_DigitalTwin_V3
+from multiphysics_accident_model.physics.gas_smoke_model import update_gas_smoke_step
+from multiphysics_accident_model.physics.ignition_spread import (
     compute_ignition_probability,
     get_burnable_mass,
     get_ignitable_mass,
@@ -140,4 +140,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

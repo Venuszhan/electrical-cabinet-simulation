@@ -33,4 +33,3 @@ def compute_gas_source_rate(sim, node, pyro_rate):
     aging_boost = 1.0 + 0.35 * sim.aging_profiles[node].eta_insulation
     alpha = base_yield * aging_boost
     return alpha * pyro_rate
-

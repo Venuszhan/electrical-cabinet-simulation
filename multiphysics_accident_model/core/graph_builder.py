@@ -256,4 +256,3 @@ def build_graph():
         'cabinet_boundary_nodes': thermal_topology['cabinet_boundary_nodes'],
         'air_zone_wall_neighbors': thermal_topology['air_zone_wall_neighbors'],
     }
-
