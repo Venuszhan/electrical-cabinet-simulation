@@ -1,6 +1,6 @@
-﻿# Electrical Cabinet Fault Simulation Dataset
+﻿# Multi-physics system accident dataset
 
-This repository contains a compact public release package for a 1920-case electrical cabinet fault simulation dataset. It includes the simulation code, complete case definitions, summary tables, and representative raw simulation examples.
+This repository contains a compact public release package for a 1920-case multi-physics system accident dataset. It includes the simulation code, complete case definitions, summary tables, and representative raw simulation examples.
 
 The package is designed for GitHub distribution. It does not include the full raw output tree or large downstream training artifacts.
 
